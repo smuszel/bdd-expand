@@ -1,0 +1,85 @@
+{
+    "name": "bdd-expand",
+    "version": "0.0.0",
+    "description": "",
+    "keywords": [],
+    "main": "dist/bdd-expand.umd.js",
+    "module": "dist/bdd-expand.es5.js",
+    "typings": "dist/types/bdd-expand.d.ts",
+    "files": [
+        "dist"
+    ],
+    "author": "smuszel <stanislaw.muszel@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/smuszel/bdd-expand"
+    },
+    "license": "MIT",
+    "engines": {
+        "node": ">=6.0.0"
+    },
+    "scripts": {
+        "prebuild": "rimraf dist",
+        "build": "tsc --module commonjs && rollup -c rollup.config.js",
+        "start": "rollup -c rollup.config.js -w",
+        "semantic-release": "semantic-release",
+        "semantic-release-prepare": "node tools/semantic-release-prepare",
+        "example:jest": "jest --testPathIgnorePatterns mocha.spec.js",
+        "example:mocha": "mocha ./example/*.spec.js -r ./mo.js"
+    },
+    "config": {
+        "commitizen": {
+            "path": "node_modules/cz-conventional-changelog"
+        }
+    },
+    "prettier": {
+        "semi": true,
+        "singleQuote": true,
+        "printWidth": 90,
+        "arrowParens": "avoid",
+        "bracketSpacing": true,
+        "trailingComma": "all",
+        "tabWidth": 4
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
+    },
+    "devDependencies": {
+        "@babel/core": "^7.4.5",
+        "@babel/preset-env": "^7.4.5",
+        "@babel/preset-typescript": "^7.3.3",
+        "@babel/register": "^7.4.4",
+        "@commitlint/cli": "^8.0.0",
+        "@commitlint/config-conventional": "^8.0.0",
+        "@types/jest": "^24.0.15",
+        "@types/node": "^12.0.10",
+        "babel-jest": "^24.8.0",
+        "chai": "^4.2.0",
+        "colors": "^1.3.2",
+        "coveralls": "^3.0.2",
+        "cz-conventional-changelog": "^2.1.0",
+        "husky": "^2.4.1",
+        "jest": "^24.8.0",
+        "jest-config": "^24.8.0",
+        "lint-staged": "^8.0.0",
+        "lodash.camelcase": "^4.3.0",
+        "mocha": "^6.1.4",
+        "prettier": "^1.14.3",
+        "rimraf": "^2.6.2",
+        "rollup": "^1.16.2",
+        "rollup-plugin-commonjs": "^10.0.0",
+        "rollup-plugin-json": "^4.0.0",
+        "rollup-plugin-node-resolve": "^5.0.4",
+        "rollup-plugin-sourcemaps": "^0.4.2",
+        "rollup-plugin-typescript2": "^0.21.2",
+        "shelljs": "^0.8.3",
+        "travis-deploy-once": "^5.0.9",
+        "tslint": "^5.18.0",
+        "tslint-config-prettier": "^1.18.0",
+        "tslint-config-standard": "^8.0.1",
+        "typedoc": "^0.14.2",
+        "typescript": "^3.5.2"
+    }
+}
